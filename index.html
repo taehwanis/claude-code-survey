@@ -670,7 +670,7 @@ function nextFromQ5() {
 }
 
 function nextFromQ6() {
-  if (answers.q6 === 0) {
+  if (answers.q6 <= 1) {
     finishWithLevel(3);
   } else {
     showPage('page-q7', 7);
