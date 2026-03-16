@@ -123,6 +123,10 @@
     align-items: center;
     gap: 12px;
   }
+  .option:focus-visible {
+    outline: 2px solid #a78bfa;
+    outline-offset: 2px;
+  }
   .option:hover {
     border-color: #6d5acd;
     background: #6d5acd0a;
@@ -260,10 +264,10 @@
     margin-bottom: 20px;
   }
   .level-1 { background: #27272a; color: #a1a1aa; }
-  .level-2 { background: #1e3a5f22; color: #60a5fa; }
+  .level-2, .level-2a { background: #1e3a5f22; color: #60a5fa; }
   .level-3 { background: #16533522; color: #4ade80; }
   .level-4 { background: #854d0e22; color: #facc15; }
-  .level-5 { background: #6d5acd22; color: #a78bfa; }
+  .level-5, .level-5a { background: #6d5acd22; color: #a78bfa; }
   .level-6 { background: #be185d22; color: #f472b6; }
 
   .result-title {
@@ -382,13 +386,13 @@
     <div class="q-title">AI 에이전트가 뭔지 아시나요?</div>
     <div class="q-desc">단순 AI 챗봇이 아니라, 도구를 사용하고 스스로 판단해서 작업을 수행하는 AI를 말합니다.</div>
     <div class="options" data-q="q1">
-      <div class="option" data-value="0" onclick="selectOption(this)">
+      <div class="option" tabindex="0" data-value="0" onclick="selectOption(this)">
         <div class="option-radio"></div> 처음 듣는 말이에요
       </div>
-      <div class="option" data-value="1" onclick="selectOption(this)">
+      <div class="option" tabindex="0" data-value="1" onclick="selectOption(this)">
         <div class="option-radio"></div> 들어는 봤는데 정확히는 모르겠어요
       </div>
-      <div class="option" data-value="2" onclick="selectOption(this)">
+      <div class="option" tabindex="0" data-value="2" onclick="selectOption(this)">
         <div class="option-radio"></div> 네, 알고 있어요
       </div>
     </div>
@@ -403,13 +407,13 @@
     <div class="q-title">에이전트가 "도구(Tool)"를 사용한다는 게 어떤 의미인지 아시나요?</div>
     <div class="q-desc">예: 파일을 읽거나, 웹 검색을 하거나, 코드를 실행하는 등의 행위를 AI가 직접 호출하는 것</div>
     <div class="options" data-q="q2">
-      <div class="option" data-value="0" onclick="selectOption(this)">
+      <div class="option" tabindex="0" data-value="0" onclick="selectOption(this)">
         <div class="option-radio"></div> 잘 모르겠어요
       </div>
-      <div class="option" data-value="1" onclick="selectOption(this)">
+      <div class="option" tabindex="0" data-value="1" onclick="selectOption(this)">
         <div class="option-radio"></div> 아, 그런 뜻이군요 (지금 알았음)
       </div>
-      <div class="option" data-value="2" onclick="selectOption(this)">
+      <div class="option" tabindex="0" data-value="2" onclick="selectOption(this)">
         <div class="option-radio"></div> 네, 이미 알고 있었어요
       </div>
     </div>
@@ -425,16 +429,19 @@
     <div class="q-title">클로드 코드(Claude Code)를 써보셨나요?</div>
     <div class="q-desc">터미널(CLI)에서 실행하는 AI 코딩 에이전트입니다.</div>
     <div class="options" data-q="q3">
-      <div class="option" data-value="0" onclick="selectOption(this)">
+      <div class="option" tabindex="0" data-value="0" onclick="selectOption(this)">
         <div class="option-radio"></div> 뭔지 모르겠어요
       </div>
-      <div class="option" data-value="1" onclick="selectOption(this)">
+      <div class="option" tabindex="0" data-value="1" onclick="selectOption(this)">
         <div class="option-radio"></div> 들어는 봤는데 안 써봤어요
       </div>
-      <div class="option" data-value="2" onclick="selectOption(this)">
+      <div class="option" tabindex="0" data-value="2" onclick="selectOption(this)">
+        <div class="option-radio"></div> 클코는 안 써봤지만 다른 AI 코딩 도구는 써봤어요
+      </div>
+      <div class="option" tabindex="0" data-value="3" onclick="selectOption(this)">
         <div class="option-radio"></div> 써본 적 있어요
       </div>
-      <div class="option" data-value="3" onclick="selectOption(this)">
+      <div class="option" tabindex="0" data-value="4" onclick="selectOption(this)">
         <div class="option-radio"></div> 현재 사용 중이에요
       </div>
     </div>
@@ -450,13 +457,13 @@
     <div class="q-title">도구를 구분해서 쓰고 계신가요?</div>
     <div class="q-desc">예: 파일 읽기 → Read, 검색 → Grep, 터미널 명령 → Bash 등</div>
     <div class="options" data-q="q4">
-      <div class="option" data-value="0" onclick="selectOption(this)">
-        <div class="option-radio"></div> 구분 없이 그냥 시키는 대로 써요
+      <div class="option" tabindex="0" data-value="0" onclick="selectOption(this)">
+        <div class="option-radio"></div> 구분 없이 AI가 알아서 쓰는 대로 써요
       </div>
-      <div class="option" data-value="1" onclick="selectOption(this)">
+      <div class="option" tabindex="0" data-value="1" onclick="selectOption(this)">
         <div class="option-radio"></div> 대략 알지만 의식하진 않아요
       </div>
-      <div class="option" data-value="2" onclick="selectOption(this)">
+      <div class="option" tabindex="0" data-value="2" onclick="selectOption(this)">
         <div class="option-radio"></div> 네, 상황에 맞게 골라 씁니다
       </div>
     </div>
@@ -470,15 +477,15 @@
   <div class="page" id="page-q5">
     <div class="q-number">Q5</div>
     <div class="q-title">권한 모드를 알고 계신가요?</div>
-    <div class="q-desc">자동허용 / 확인 후 실행 / Plan 모드 등 실행 권한을 제어하는 기능</div>
+    <div class="q-desc">자동허용 / 확인 후 실행 / 도구별 허용·거부 등 실행 권한을 제어하는 기능</div>
     <div class="options" data-q="q5">
-      <div class="option" data-value="0" onclick="selectOption(this)">
+      <div class="option" tabindex="0" data-value="0" onclick="selectOption(this)">
         <div class="option-radio"></div> 몰랐어요
       </div>
-      <div class="option" data-value="1" onclick="selectOption(this)">
+      <div class="option" tabindex="0" data-value="1" onclick="selectOption(this)">
         <div class="option-radio"></div> 알긴 하는데 건드려본 적 없어요
       </div>
-      <div class="option" data-value="2" onclick="selectOption(this)">
+      <div class="option" tabindex="0" data-value="2" onclick="selectOption(this)">
         <div class="option-radio"></div> 설정해서 쓰고 있어요
       </div>
     </div>
@@ -494,13 +501,13 @@
     <div class="q-title">CLAUDE.md 파일이 뭔지 아시나요?</div>
     <div class="q-desc">프로젝트별 지시사항을 적어두는 설정 파일로, AI의 행동 규칙을 정의합니다.</div>
     <div class="options" data-q="q6">
-      <div class="option" data-value="0" onclick="selectOption(this)">
+      <div class="option" tabindex="0" data-value="0" onclick="selectOption(this)">
         <div class="option-radio"></div> 처음 들어요
       </div>
-      <div class="option" data-value="1" onclick="selectOption(this)">
+      <div class="option" tabindex="0" data-value="1" onclick="selectOption(this)">
         <div class="option-radio"></div> 있다는 건 아는데 직접 작성해본 적 없어요
       </div>
-      <div class="option" data-value="2" onclick="selectOption(this)">
+      <div class="option" tabindex="0" data-value="2" onclick="selectOption(this)">
         <div class="option-radio"></div> 직접 작성해서 쓰고 있어요
       </div>
     </div>
@@ -516,23 +523,23 @@
     <div class="q-title">다음 중 알고 있거나 사용해본 것을 모두 골라주세요.</div>
     <div class="q-desc">하나도 모르면 맨 아래를 선택해주세요.</div>
     <div class="options" data-q="q7">
-      <div class="option" data-value="hook" onclick="toggleCheck(this)">
+      <div class="option" tabindex="0" data-value="hook" onclick="toggleCheck(this)">
         <div class="option-check"></div>
         <span><strong>훅 (Hook)</strong> — 도구 실행 전후에 자동 실행되는 스크립트</span>
       </div>
-      <div class="option" data-value="mcp" onclick="toggleCheck(this)">
+      <div class="option" tabindex="0" data-value="mcp" onclick="toggleCheck(this)">
         <div class="option-check"></div>
         <span><strong>MCP 서버</strong> — 외부 도구/API를 클로드에 연결</span>
       </div>
-      <div class="option" data-value="skill" onclick="toggleCheck(this)">
+      <div class="option" tabindex="0" data-value="skill" onclick="toggleCheck(this)">
         <div class="option-check"></div>
         <span><strong>스킬 (Skill)</strong> — 슬래시 명령으로 호출하는 재사용 프롬프트</span>
       </div>
-      <div class="option" data-value="agent" onclick="toggleCheck(this)">
+      <div class="option" tabindex="0" data-value="agent" onclick="toggleCheck(this)">
         <div class="option-check"></div>
         <span><strong>커스텀 에이전트</strong> — 특정 작업 전담 서브에이전트</span>
       </div>
-      <div class="option" data-value="none" onclick="selectNone(this)">
+      <div class="option" tabindex="0" data-value="none" onclick="selectNone(this)">
         <div class="option-check"></div>
         <span>하나도 모르겠어요</span>
       </div>
@@ -549,13 +556,13 @@
     <div class="q-title">위에서 선택한 것 중 직접 만들어본 적 있나요?</div>
     <div class="q-desc">훅 스크립트 작성, MCP 서버 등록, 스킬 파일 생성 등</div>
     <div class="options" data-q="q8">
-      <div class="option" data-value="0" onclick="selectOption(this)">
+      <div class="option" tabindex="0" data-value="0" onclick="selectOption(this)">
         <div class="option-radio"></div> 아니요, 개념만 알아요
       </div>
-      <div class="option" data-value="1" onclick="selectOption(this)">
+      <div class="option" tabindex="0" data-value="1" onclick="selectOption(this)">
         <div class="option-radio"></div> 남이 만든 걸 가져다 쓴 적 있어요
       </div>
-      <div class="option" data-value="2" onclick="selectOption(this)">
+      <div class="option" tabindex="0" data-value="2" onclick="selectOption(this)">
         <div class="option-radio"></div> 직접 만들어서 쓰고 있어요
       </div>
     </div>
@@ -580,6 +587,13 @@ const totalSteps = 8;
 let maxReachedStep = 0;
 let userName = '';
 
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    const opt = e.target.closest('.option');
+    if (opt) { e.preventDefault(); opt.click(); }
+  }
+});
+
 function checkNameInput() {
   const val = document.getElementById('userName').value.trim();
   document.getElementById('btn-start').disabled = val.length === 0;
@@ -601,8 +615,31 @@ function showPage(id, step) {
 
 function goBack(pageId) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById(pageId).classList.add('active');
+  const page = document.getElementById(pageId);
+  page.classList.add('active');
+  restorePageState(page);
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function restorePageState(page) {
+  const group = page.querySelector('.options');
+  if (!group) return;
+  const q = group.dataset.q;
+  const val = answers[q];
+  if (val === undefined) return;
+
+  if (q === 'q7' && Array.isArray(val)) {
+    group.querySelectorAll('.option').forEach(opt => {
+      opt.classList.toggle('selected', val.includes(opt.dataset.value));
+    });
+  } else {
+    group.querySelectorAll('.option').forEach(opt => {
+      opt.classList.toggle('selected', parseInt(opt.dataset.value) === val);
+    });
+  }
+
+  const btn = document.getElementById(`btn-${q}`);
+  if (btn) btn.disabled = false;
 }
 
 function selectOption(el) {
@@ -641,8 +678,17 @@ function startSurvey() {
   showPage('page-q1', 1);
 }
 
+function clearForwardAnswers(fromQ) {
+  const order = ['q1','q2','q3','q4','q5','q6','q7','q8'];
+  const idx = order.indexOf(fromQ);
+  for (let i = idx + 1; i < order.length; i++) {
+    delete answers[order[i]];
+  }
+}
+
 function nextFromQ1() {
   if (answers.q1 === 0) {
+    clearForwardAnswers('q1');
     finishWithLevel(1);
   } else {
     showPage('page-q2', 2);
@@ -655,7 +701,11 @@ function nextFromQ2() {
 
 function nextFromQ3() {
   if (answers.q3 <= 1) {
+    clearForwardAnswers('q3');
     finishWithLevel(2);
+  } else if (answers.q3 === 2) {
+    clearForwardAnswers('q3');
+    finishWithLevel('2a');
   } else {
     showPage('page-q4', 4);
   }
@@ -671,6 +721,7 @@ function nextFromQ5() {
 
 function nextFromQ6() {
   if (answers.q6 <= 1) {
+    clearForwardAnswers('q6');
     finishWithLevel(3);
   } else {
     showPage('page-q7', 7);
@@ -679,6 +730,7 @@ function nextFromQ6() {
 
 function nextFromQ7() {
   if (answers.q7.includes('none')) {
+    clearForwardAnswers('q7');
     finishWithLevel(4);
   } else {
     showPage('page-q8', 8);
@@ -688,7 +740,7 @@ function nextFromQ7() {
 function showResult() {
   const v = answers.q8;
   if (v === 0) finishWithLevel(5);
-  else if (v === 1) finishWithLevel(5);
+  else if (v === 1) finishWithLevel('5a');
   else finishWithLevel(6);
 }
 
@@ -709,6 +761,14 @@ const levelData = {
     color: '#60a5fa',
     pct: 25
   },
+  '2a': {
+    name: 'AI 도구 경험자',
+    grade: '초급',
+    title: '다른 AI 도구 경험이 있으시군요!',
+    desc: 'AI 코딩 도구를 이미 써보셨으니 감이 있으실 거예요. 클로드 코드는 터미널에서 직접 돌리는 AI 에이전트로, CLAUDE.md로 행동 규칙을 정의하고 훅·MCP 등으로 확장할 수 있습니다.',
+    color: '#60a5fa',
+    pct: 30
+  },
   3: {
     name: '클코 입문자',
     grade: '중급',
@@ -728,10 +788,18 @@ const levelData = {
   5: {
     name: '클코 숙련자',
     grade: '고급',
-    title: '고급 기능까지 파악하고 계시네요!',
-    desc: '훅, MCP, 스킬 같은 확장 기능의 존재를 알고 계시거나 가져다 써본 경험이 있으시네요.',
+    title: '고급 기능을 알고 계시네요!',
+    desc: '훅, MCP, 스킬 같은 확장 기능의 존재를 파악하고 계시네요. 직접 만들어보면 워크플로우가 확 달라질 거예요.',
     color: '#a78bfa',
-    pct: 80
+    pct: 75
+  },
+  '5a': {
+    name: '클코 활용자',
+    grade: '고급',
+    title: '확장 기능을 가져다 쓰고 계시네요!',
+    desc: '남이 만든 훅, MCP, 스킬 등을 활용하고 계시군요. 직접 만들어보면 전문가 레벨입니다.',
+    color: '#a78bfa',
+    pct: 85
   },
   6: {
     name: '클코 전문가',
@@ -792,7 +860,7 @@ function submitToGoogleSheets(level, levelInfo) {
   if (!GOOGLE_SCRIPT_URL) return;
 
   const payload = {
-    name: userName,
+    name: userName.replace(/^[=+\-@\t\r]/, "'"),
     level: level,
     grade: levelInfo.grade,
     levelName: levelInfo.name,
@@ -814,7 +882,7 @@ function submitToGoogleSheets(level, levelInfo) {
     body: JSON.stringify(payload)
   }).then(() => {
     const el = document.getElementById('submitStatus');
-    if (el) { el.textContent = '응답이 저장되었습니다.'; el.className = 'submit-status success'; }
+    if (el) { el.textContent = '응답을 전송했습니다.'; el.className = 'submit-status'; }
   }).catch(() => {
     const el = document.getElementById('submitStatus');
     if (el) { el.textContent = '저장 실패 — 결과는 정상 표시됩니다.'; el.className = 'submit-status error'; }
@@ -825,8 +893,8 @@ function getAnswerSummary() {
   const labels = {
     q1: { q: 'AI 에이전트 인지', 0: '처음 듣는 말', 1: '들어는 봤음', 2: '알고 있음' },
     q2: { q: '도구(Tool) 개념', 0: '잘 모르겠음', 1: '지금 알았음', 2: '이미 알고 있었음' },
-    q3: { q: '클로드 코드 사용', 0: '모름', 1: '안 써봄', 2: '써본 적 있음', 3: '현재 사용 중' },
-    q4: { q: '도구 구분 사용', 0: '구분 없이 사용', 1: '대략 앎', 2: '골라 씀' },
+    q3: { q: '클로드 코드 사용', 0: '모름', 1: '안 써봄', 2: '다른 AI 도구 사용', 3: '써본 적 있음', 4: '현재 사용 중' },
+    q4: { q: '도구 구분 사용', 0: 'AI가 알아서', 1: '대략 앎', 2: '골라 씀' },
     q5: { q: '권한 모드 인지', 0: '몰랐음', 1: '알지만 안 건드림', 2: '설정해서 사용' },
     q6: { q: 'CLAUDE.md 인지', 0: '처음 들어봄', 1: '있다는 건 앎', 2: '직접 작성 사용' },
     q7: { q: '고급 기능 인지' },
