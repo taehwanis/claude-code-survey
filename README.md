@@ -25,3 +25,15 @@
 - 클로드 코드 사용 경험
 - 권한 모드, CLAUDE.md
 - 훅, MCP 서버, 스킬, 커스텀 에이전트
+
+---
+
+## AI Agent Study 커리큘럼
+
+이 설문 결과를 바탕으로 운영하는 사내 AI 에이전트 스터디 커리큘럼입니다.
+
+**[커리큘럼 보기 →](https://taehwanis.github.io/claude-code-survey/AI_Agent_Study_v7_summary.html)**
+
+- Claude Code의 Extension Points를 활용해 나만의 AI 파트너를 설계하는 스터디
+- 매주 목요일 17:00 / 60~120분 / OT + 5주 이상
+- 주차별 구성: CLAUDE.md → Skills → Hooks → MCP + Agents → 교차 리뷰
